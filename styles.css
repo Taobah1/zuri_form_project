@@ -117,6 +117,16 @@ input:focus {
   visibility: hidden;
 }
 
+.toggle-img {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: block;
+}
+
 button {
   display: block;
   width: 100%;

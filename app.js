@@ -9,10 +9,9 @@ const lNameError = document.querySelector("#lNameError");
 const emailError = document.querySelector("#emailError");
 const passwordError = document.querySelector("#passwordError");
 const icon = document.querySelector(".input_img");
-
-console.log(firstName);
-
-// console.log(firstName, lastName, email, password);
+const passwordField = document.getElementById("password");
+const toggleIcon = passwordField.previousElementSibling;
+const passwordErrorIcon = toggleIcon.previousElementSibling;
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -21,7 +20,6 @@ form.addEventListener("submit", (e) => {
   const lName = lastName.value;
   const emailVal = email.value;
   const passwordVal = password.value;
-  console.log(fName, lName, emailVal, passwordVal);
 
   // Check first name
   if (fName === "") {
@@ -60,8 +58,9 @@ form.addEventListener("submit", (e) => {
   if (passwordVal === "") {
     password.classList.add("error");
     passwordError.textContent = "Password cannot be empty";
+    toggleIcon.style.display = "none";
     passwordError.style.visibility = "visible";
-    password.previousElementSibling.style.visibility = "visible";
+    passwordErrorIcon.style.visibility = "visible";
   } else {
     password.classList.remove("error");
   }
@@ -72,4 +71,14 @@ function validateEmail(email) {
   var re =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
+}
+// toggle between password show or hide
+function togglePassword() {
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    toggleIcon.src = "images/eye.png";
+  } else {
+    passwordField.type = "password";
+    toggleIcon.src = "images/eye.png";
+  }
 }

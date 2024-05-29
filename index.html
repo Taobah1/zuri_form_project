@@ -48,7 +48,7 @@
             <p id="lNameError" class="error-message"></p>
           </div>
           <div class="input_container">
-            <input type="email" class="email" placeholder="Email" />
+            <input type="text" class="email" placeholder="Email" />
             <img
               src="images/icon-error.jpg"
               alt="error-icon"
@@ -60,7 +60,16 @@
               src="images/icon-error.jpg"
               alt="error-icon"
               class="input_img" />
-            <input type="password" class="password" placeholder="Password" />
+            <img
+              src="images/eye.png"
+              class="toggle-img"
+              onclick="togglePassword()"
+              alt="" />
+            <input
+              type="password"
+              class="password"
+              id="password"
+              placeholder="Password" />
             <p id="passwordError" class="error-message"></p>
           </div>
           <button id="button">Claim your free trial</button>
