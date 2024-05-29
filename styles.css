@@ -207,4 +207,8 @@ small span {
   input {
     margin-bottom: 1.5rem;
   }
+
+  .container {
+    margin-bottom: 10rem;
+  }
 }
